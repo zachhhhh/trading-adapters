@@ -1,0 +1,56 @@
+[build-system]
+requires = ["hatchling>=1.25"]
+build-backend = "hatchling.build"
+
+[project]
+name = "norynta"
+version = "0.1.0"
+description = "Typed, zero-dependency Python client for Norynta prediction markets and caller-signed trading workflows."
+readme = "README.md"
+requires-python = ">=3.10"
+license = { file = "LICENSE" }
+authors = [{ name = "Norynta", email = "hello@norynta.com" }]
+keywords = ["norynta", "prediction-markets", "mcp", "agents", "trading"]
+classifiers = [
+  "Development Status :: 3 - Alpha",
+  "Intended Audience :: Developers",
+  "License :: OSI Approved :: MIT License",
+  "Programming Language :: Python :: 3",
+  "Programming Language :: Python :: 3.10",
+  "Programming Language :: Python :: 3.11",
+  "Programming Language :: Python :: 3.12",
+  "Programming Language :: Python :: 3.13",
+  "Typing :: Typed"
+]
+
+[project.optional-dependencies]
+parquet = ["pyarrow>=17"]
+research = ["pandas>=2.2"]
+backtrader = ["backtrader>=1.9.78.123", "pandas>=2.2"]
+backtesting = ["backtesting>=0.6.5", "pandas>=2.2"]
+vectorbt = ["vectorbt>=0.28", "pandas>=2.2"]
+dev = [
+  "build>=1.2",
+  "mypy>=1.11",
+  "twine>=5.1",
+]
+
+[project.scripts]
+norynta-adapters = "norynta.frameworks:main"
+
+[project.urls]
+Homepage = "https://norynta.com/developers"
+Documentation = "https://norynta.com/docs/api-reference"
+Repository = "https://github.com/norynta/trading-adapters"
+Issues = "https://github.com/norynta/trading-adapters/issues"
+
+[tool.hatch.build.targets.wheel]
+packages = ["src/norynta"]
+
+[tool.hatch.build.targets.sdist]
+include = ["src/norynta", "tests", "README.md", "LICENSE", "pyproject.toml", "sbom.cdx.json"]
+
+[tool.mypy]
+python_version = "3.10"
+strict = true
+files = ["src/norynta"]

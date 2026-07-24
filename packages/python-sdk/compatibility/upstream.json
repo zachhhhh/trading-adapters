@@ -1,0 +1,101 @@
+{
+  "schemaVersion": "2026-07-24.2",
+  "frameworks": {
+    "ccxt": {
+      "officialRepository": "https://github.com/ccxt/ccxt",
+      "verification": "contract_fixture",
+      "note": "The Norynta facade is dependency-free and is checked against CCXT-style method and payload fixtures."
+    },
+    "hummingbot": {
+      "officialRepository": "https://github.com/hummingbot/hummingbot",
+      "verification": "contract_fixture",
+      "note": "Snapshot content is checked without installing Hummingbot's full source environment."
+    },
+    "freqtrade": {
+      "officialRepository": "https://github.com/freqtrade/freqtrade",
+      "verification": "contract_fixture",
+      "note": "OHLCV exports and the starter strategy are compiled; no native live exchange is claimed."
+    },
+    "nautilustrader": {
+      "officialRepository": "https://github.com/nautechsystems/nautilus_trader",
+      "verification": "contract_fixture",
+      "note": "Quote-tick records are a custom-data bridge and are sequence-tested in the SDK."
+    },
+    "lean": {
+      "officialRepository": "https://github.com/QuantConnect/Lean",
+      "verification": "source_contract",
+      "note": "The Python custom-data class is compiled; LEAN's .NET engine is not installed in Python SDK CI."
+    },
+    "backtrader": {
+      "officialRepository": "https://github.com/mementum/backtrader",
+      "verification": "continuous_upstream",
+      "package": "backtrader",
+      "extra": "backtrader",
+      "minimumVersion": "1.9.78.123"
+    },
+    "backtesting": {
+      "officialRepository": "https://github.com/kernc/backtesting.py",
+      "verification": "continuous_upstream",
+      "package": "backtesting",
+      "extra": "backtesting",
+      "minimumVersion": "0.6.5"
+    },
+    "vectorbt": {
+      "officialRepository": "https://github.com/polakowo/vectorbt",
+      "verification": "continuous_upstream",
+      "package": "vectorbt",
+      "extra": "vectorbt",
+      "minimumVersion": "0.28"
+    },
+    "vnpy": {
+      "officialRepository": "https://github.com/vnpy/vnpy",
+      "verification": "contract_fixture",
+      "note": "BarData-compatible records are unit-tested and the optional native example is compiled."
+    },
+    "qlib": {
+      "officialRepository": "https://github.com/microsoft/qlib",
+      "verification": "contract_fixture",
+      "note": "The feature-frame contract is tested without forcing Qlib's training environment into the SDK."
+    },
+    "finrl": {
+      "officialRepository": "https://github.com/AI4Finance-Foundation/FinRL",
+      "verification": "contract_fixture",
+      "note": "The dataset contract is tested without forcing FinRL's training stack into the SDK."
+    },
+    "jesse": {
+      "officialRepository": "https://github.com/jesse-ai/jesse",
+      "verification": "contract_fixture",
+      "note": "Candle order and the starter strategy are checked; no native live exchange is claimed."
+    },
+    "openbb": {
+      "officialRepository": "https://github.com/OpenBB-finance/OpenBB",
+      "verification": "source_contract",
+      "note": "EquityHistoricalData-compatible records and a provider starter are compiled without pulling OpenBB's full platform dependency graph into SDK CI."
+    },
+    "lumibot": {
+      "officialRepository": "https://github.com/Lumiwealth/lumibot",
+      "verification": "contract_fixture",
+      "note": "The PandasData-compatible frame is tested as a backtest and paper-data bridge; it is not advertised as a native live broker."
+    },
+    "quantstats": {
+      "officialRepository": "https://github.com/ranaroussi/quantstats",
+      "verification": "contract_fixture",
+      "note": "The UTC decimal-return series contract is tested without coupling the SDK to report-rendering dependencies."
+    },
+    "tensortrade": {
+      "officialRepository": "https://github.com/tensortrade-org/tensortrade",
+      "verification": "contract_fixture",
+      "note": "Deterministic feature rows are suitable for DataFeed Stream sources; Norynta does not claim a live execution service."
+    },
+    "zipline": {
+      "officialRepository": "https://github.com/stefan-jansen/zipline-reloaded",
+      "verification": "source_contract",
+      "note": "Bundle-ingest OHLCV rows include required corporate-action defaults and are compiled independently of Zipline's platform-specific runtime."
+    },
+    "octobot": {
+      "officialRepository": "https://github.com/Drakkar-Software/OctoBot",
+      "verification": "contract_fixture",
+      "note": "Historical candle arrays support research, backtesting, and paper workflows; no native live exchange plugin is claimed."
+    }
+  }
+}

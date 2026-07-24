@@ -1,0 +1,10 @@
+services:
+  adapters:
+    build:
+      context: ../..
+      dockerfile: examples/oss-trading-adapters/Dockerfile
+    environment:
+      NORYNTA_BASE_URL: ${NORYNTA_BASE_URL:-http://host.docker.internal:3000}
+      NORYNTA_AGENT_API_KEY: ${NORYNTA_AGENT_API_KEY:-}
+    volumes:
+      - ./output:/output

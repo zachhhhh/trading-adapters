@@ -1,0 +1,24 @@
+{
+  "bomFormat": "CycloneDX",
+  "specVersion": "1.6",
+  "serialNumber": "urn:uuid:75c85636-3788-4adc-9c35-66dff9c169ae",
+  "version": 1,
+  "metadata": {
+    "timestamp": "2026-07-19T00:00:00Z",
+    "component": {
+      "type": "library",
+      "bom-ref": "pkg:pypi/norynta@0.1.0",
+      "name": "norynta",
+      "version": "0.1.0",
+      "purl": "pkg:pypi/norynta@0.1.0",
+      "licenses": [{ "license": { "id": "MIT" } }]
+    }
+  },
+  "components": [],
+  "dependencies": [
+    {
+      "ref": "pkg:pypi/norynta@0.1.0",
+      "dependsOn": []
+    }
+  ]
+}
